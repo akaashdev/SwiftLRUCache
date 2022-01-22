@@ -16,6 +16,11 @@
 		082501CC279BD86800AECB82 /* LRUCacheAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501CB279BD86800AECB82 /* LRUCacheAppTests.swift */; };
 		082501D6279BD86800AECB82 /* LRUCacheAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501D5279BD86800AECB82 /* LRUCacheAppUITests.swift */; };
 		082501D8279BD86800AECB82 /* LRUCacheAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501D7279BD86800AECB82 /* LRUCacheAppUITestsLaunchTests.swift */; };
+		082501EB279BD92900AECB82 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501EA279BD92900AECB82 /* LRUCache.swift */; };
+		082501F0279BD94D00AECB82 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501EF279BD94C00AECB82 /* DoublyLinkedList.swift */; };
+		082501F8279BEA1500AECB82 /* LRUCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501F7279BEA1500AECB82 /* LRUCacheTests.swift */; };
+		082501F9279BEA1500AECB82 /* libLRUCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 082501E8279BD92900AECB82 /* libLRUCache.a */; };
+		08250200279BEA2B00AECB82 /* DoublyLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501FF279BEA2B00AECB82 /* DoublyLinkedListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +38,26 @@
 			remoteGlobalIDString = 082501B0279BD86600AECB82;
 			remoteInfo = LRUCacheApp;
 		};
+		082501FA279BEA1500AECB82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082501A9279BD86600AECB82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082501E7279BD92900AECB82;
+			remoteInfo = LRUCache;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		082501E6279BD92900AECB82 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		082501B1279BD86600AECB82 /* LRUCacheApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRUCacheApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +73,12 @@
 		082501D1279BD86800AECB82 /* LRUCacheAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRUCacheAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		082501D5279BD86800AECB82 /* LRUCacheAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheAppUITests.swift; sourceTree = "<group>"; };
 		082501D7279BD86800AECB82 /* LRUCacheAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		082501E8279BD92900AECB82 /* libLRUCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLRUCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		082501EA279BD92900AECB82 /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		082501EF279BD94C00AECB82 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedList.swift; sourceTree = "<group>"; };
+		082501F5279BEA1500AECB82 /* LRUCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRUCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		082501F7279BEA1500AECB82 /* LRUCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheTests.swift; sourceTree = "<group>"; };
+		082501FF279BEA2B00AECB82 /* DoublyLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +103,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		082501E5279BD92900AECB82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082501F2279BEA1500AECB82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082501F9279BEA1500AECB82 /* libLRUCache.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +127,8 @@
 				082501B3279BD86600AECB82 /* LRUCacheApp */,
 				082501CA279BD86800AECB82 /* LRUCacheAppTests */,
 				082501D4279BD86800AECB82 /* LRUCacheAppUITests */,
+				082501E9279BD92900AECB82 /* LRUCache */,
+				082501F6279BEA1500AECB82 /* LRUCacheTests */,
 				082501B2279BD86600AECB82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +139,8 @@
 				082501B1279BD86600AECB82 /* LRUCacheApp.app */,
 				082501C7279BD86800AECB82 /* LRUCacheAppTests.xctest */,
 				082501D1279BD86800AECB82 /* LRUCacheAppUITests.xctest */,
+				082501E8279BD92900AECB82 /* libLRUCache.a */,
+				082501F5279BEA1500AECB82 /* LRUCacheTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +174,24 @@
 				082501D7279BD86800AECB82 /* LRUCacheAppUITestsLaunchTests.swift */,
 			);
 			path = LRUCacheAppUITests;
+			sourceTree = "<group>";
+		};
+		082501E9279BD92900AECB82 /* LRUCache */ = {
+			isa = PBXGroup;
+			children = (
+				082501EA279BD92900AECB82 /* LRUCache.swift */,
+				082501EF279BD94C00AECB82 /* DoublyLinkedList.swift */,
+			);
+			path = LRUCache;
+			sourceTree = "<group>";
+		};
+		082501F6279BEA1500AECB82 /* LRUCacheTests */ = {
+			isa = PBXGroup;
+			children = (
+				082501F7279BEA1500AECB82 /* LRUCacheTests.swift */,
+				082501FF279BEA2B00AECB82 /* DoublyLinkedListTests.swift */,
+			);
+			path = LRUCacheTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +250,41 @@
 			productReference = 082501D1279BD86800AECB82 /* LRUCacheAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		082501E7279BD92900AECB82 /* LRUCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082501EC279BD92900AECB82 /* Build configuration list for PBXNativeTarget "LRUCache" */;
+			buildPhases = (
+				082501E4279BD92900AECB82 /* Sources */,
+				082501E5279BD92900AECB82 /* Frameworks */,
+				082501E6279BD92900AECB82 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LRUCache;
+			productName = LRUCache;
+			productReference = 082501E8279BD92900AECB82 /* libLRUCache.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		082501F4279BEA1500AECB82 /* LRUCacheTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082501FC279BEA1500AECB82 /* Build configuration list for PBXNativeTarget "LRUCacheTests" */;
+			buildPhases = (
+				082501F1279BEA1500AECB82 /* Sources */,
+				082501F2279BEA1500AECB82 /* Frameworks */,
+				082501F3279BEA1500AECB82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082501FB279BEA1500AECB82 /* PBXTargetDependency */,
+			);
+			name = LRUCacheTests;
+			productName = LRUCacheTests;
+			productReference = 082501F5279BEA1500AECB82 /* LRUCacheTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +306,12 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 082501B0279BD86600AECB82;
 					};
+					082501E7279BD92900AECB82 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					082501F4279BEA1500AECB82 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 082501AC279BD86600AECB82 /* Build configuration list for PBXProject "LRUCacheApp" */;
@@ -222,6 +330,8 @@
 				082501B0279BD86600AECB82 /* LRUCacheApp */,
 				082501C6279BD86800AECB82 /* LRUCacheAppTests */,
 				082501D0279BD86800AECB82 /* LRUCacheAppUITests */,
+				082501E7279BD92900AECB82 /* LRUCache */,
+				082501F4279BEA1500AECB82 /* LRUCacheTests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +355,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		082501CF279BD86800AECB82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082501F3279BEA1500AECB82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +398,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		082501E4279BD92900AECB82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082501EB279BD92900AECB82 /* LRUCache.swift in Sources */,
+				082501F0279BD94D00AECB82 /* DoublyLinkedList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082501F1279BEA1500AECB82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082501F8279BEA1500AECB82 /* LRUCacheTests.swift in Sources */,
+				08250200279BEA2B00AECB82 /* DoublyLinkedListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +428,11 @@
 			isa = PBXTargetDependency;
 			target = 082501B0279BD86600AECB82 /* LRUCacheApp */;
 			targetProxy = 082501D2279BD86800AECB82 /* PBXContainerItemProxy */;
+		};
+		082501FB279BEA1500AECB82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082501E7279BD92900AECB82 /* LRUCache */;
+			targetProxy = 082501FA279BEA1500AECB82 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -558,6 +698,60 @@
 			};
 			name = Release;
 		};
+		082501ED279BD92900AECB82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		082501EE279BD92900AECB82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		082501FD279BEA1500AECB82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.LRUCacheTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		082501FE279BEA1500AECB82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.LRUCacheTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,6 +787,24 @@
 			buildConfigurations = (
 				082501E2279BD86800AECB82 /* Debug */,
 				082501E3279BD86800AECB82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082501EC279BD92900AECB82 /* Build configuration list for PBXNativeTarget "LRUCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082501ED279BD92900AECB82 /* Debug */,
+				082501EE279BD92900AECB82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082501FC279BEA1500AECB82 /* Build configuration list for PBXNativeTarget "LRUCacheTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082501FD279BEA1500AECB82 /* Debug */,
+				082501FE279BEA1500AECB82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
