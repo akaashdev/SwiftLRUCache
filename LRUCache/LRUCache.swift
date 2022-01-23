@@ -5,11 +5,15 @@ protocol CacheConfigable {
     var maxCount: Int { get }
 }
 
-struct CacheConfig: CacheConfigable {
-    static let `default` = CacheConfig(maxCost: .max, maxCount: .max)
-    
+public struct CacheConfig: CacheConfigable {
+    static let `default` = CacheConfig()
     let maxCost: Int
     let maxCount: Int
+    
+    public init(maxCost: Int = .max, maxCount: Int = .max) {
+        self.maxCost = maxCost
+        self.maxCount = maxCount
+    }
 }
 
 protocol CostProviderProtocol {
@@ -22,19 +26,24 @@ class CostProvider: CostProviderProtocol {
     }
 }
 
-class LRUCache<Key: Hashable, Item> {
+public class LRUCache<Key: Hashable, Item> {
     let config: CacheConfigable
     
     private let costProvider: CostProviderProtocol
     private let list: DoublyLinkedList<ItemNode>
+    private let lock: NSLock = NSLock()
     private var map: [Key: ItemNode] = [:]
     
     private (set) var totalCost: Int = 0 {
         didSet { purge() }
     }
     
-    convenience init() {
+    public convenience init() {
         self.init(config: CacheConfig.default)
+    }
+    
+    public convenience init(cacheConfig: CacheConfig) {
+        self.init(config: cacheConfig)
     }
     
     init(config: CacheConfigable) {
@@ -44,7 +53,9 @@ class LRUCache<Key: Hashable, Item> {
         costProvider = advanceConfig?.costProvider ?? CostProvider()
     }
     
-    func value(for key: Key) -> Item? {
+    public func value(for key: Key) -> Item? {
+        lock.lock()
+        defer { lock.unlock() }
         guard let itemNode = map[key] else { return nil }
         itemNode.updateLastAccessed()
         list.remove(node: itemNode)
@@ -52,7 +63,9 @@ class LRUCache<Key: Hashable, Item> {
         return itemNode.item
     }
     
-    func itemInfo(for key: Key) -> ItemMetaData? {
+    public func itemInfo(for key: Key) -> ItemMetaData? {
+        lock.lock()
+        defer { lock.unlock() }
         guard let itemNode = map[key] else { return nil }
         return ItemMetaData(key: itemNode.key,
                             cost: itemNode.cost,
@@ -60,11 +73,20 @@ class LRUCache<Key: Hashable, Item> {
                             lastAccessedTime: itemNode.lastAccessedTime)
     }
     
-    func setItem(_ item: Item, for key: Key) {
+    public func setItem(_ item: Item, for key: Key) {
+        lock.lock()
+        defer { lock.unlock() }
         let itemNode = ItemNode(key: key, item: item, costProvider: costProvider)
         list.append(itemNode)
         map[key] = itemNode
         totalCost += itemNode.cost
+    }
+    
+    public func clearAll() {
+        lock.lock()
+        map.removeAll()
+        list.removeAll()
+        lock.unlock()
     }
     
     private func purge() {
@@ -83,7 +105,7 @@ extension LRUCache {
         let createdTime: Date
         var lastAccessedTime: Date
         var next: ItemNode?
-        var previous: ItemNode?
+        weak var previous: ItemNode?
         
         init(key: Key, item: Item, costProvider: CostProviderProtocol) {
             self.key = key
@@ -105,7 +127,7 @@ extension LRUCache {
         let costProvider: CostProviderProtocol
     }
     
-    struct ItemMetaData {
+    public struct ItemMetaData {
         let key: Key
         let cost: Int
         let createdTime: Date

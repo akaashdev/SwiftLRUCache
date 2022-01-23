@@ -41,4 +41,11 @@ class DoublyLinkedList<T: Node> {
         remove(node: head)
         return head
     }
+    
+    func removeAll() {
+        if let head = head { remove(node: head) }
+        if let tail = tail { remove(node: tail) }
+        head = nil
+        tail = nil
+    }
 }

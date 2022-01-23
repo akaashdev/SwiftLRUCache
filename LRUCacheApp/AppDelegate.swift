@@ -9,28 +9,42 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
+    var context: Context?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let context = Context()
+        
+        self.context = context
+        self.window = UIWindow()
+        
+        window?.rootViewController = UINavigationController(rootViewController: ViewController(context: context))
+        window?.makeKeyAndVisible()
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
+class Context {
+    let urlSession: URLSessionProtocol
+    let apiManager: APIManagerProtocol
+    let cacheManager: CacheManagerProtocol
+    let imageDownloader: ImageDownloaderProtocol
+    
+    init(urlSession: URLSessionProtocol, apiManager: APIManagerProtocol, cacheManager: CacheManagerProtocol, imageDownloader: ImageDownloaderProtocol) {
+        self.urlSession = urlSession
+        self.apiManager = apiManager
+        self.cacheManager = cacheManager
+        self.imageDownloader = imageDownloader
+    }
+    
+    convenience init() {
+        let urlSession = URLSession.shared
+        let apiManager = APIManager(urlSession: urlSession)
+        let cacheManager = CacheManager()
+        let imageDownloader = ImageDownloader(apiManager: apiManager, cacheManager: cacheManager)
+        self.init(urlSession: urlSession,
+                  apiManager: apiManager,
+                  cacheManager: cacheManager,
+                  imageDownloader: imageDownloader)
+    }
+}

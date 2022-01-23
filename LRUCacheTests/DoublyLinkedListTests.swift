@@ -99,6 +99,36 @@ class DoublyLinkedListTests: XCTestCase {
         XCTAssertEqual(node?.value, 1)
     }
     
+    func testRemoveAll() {
+        weak var node1: FakeNode?
+        weak var node2: FakeNode?
+        weak var node3: FakeNode?
+        weak var node4: FakeNode?
+        
+        autoreleasepool {
+            prepareList([1, 2, 3, 4])
+            node1 = list[0]
+            node2 = list[1]
+            node3 = list[2]
+            node4 = list[3]
+            
+            XCTAssertEqual(node1?.value, 1)
+            XCTAssertEqual(node2?.value, 2)
+            XCTAssertEqual(node3?.value, 3)
+            XCTAssertEqual(node4?.value, 4)
+            
+            list.removeAll()
+            
+            XCTAssertNil(list.head)
+            XCTAssertNil(list.tail)
+        }
+        
+        XCTAssertNil(node1)
+        XCTAssertNil(node2)
+        XCTAssertNil(node3)
+        XCTAssertNil(node4)
+    }
+    
     private func prepareList(_ seq: [Int]) {
         seq.forEach { list.append(FakeNode(integerLiteral: $0)) }
     }
@@ -112,7 +142,7 @@ class DoublyLinkedListTests: XCTestCase {
 
 private final class FakeNode: Node, ExpressibleByIntegerLiteral, Equatable {
     var next: FakeNode?
-    var previous: FakeNode?
+    weak var previous: FakeNode?
     let value: Int
     
     init(integerLiteral value: Int) {

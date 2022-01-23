@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082501B5279BD86600AECB82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501B4279BD86600AECB82 /* AppDelegate.swift */; };
-		082501B7279BD86600AECB82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501B6279BD86600AECB82 /* SceneDelegate.swift */; };
 		082501B9279BD86600AECB82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501B8279BD86600AECB82 /* ViewController.swift */; };
-		082501BC279BD86700AECB82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082501BA279BD86700AECB82 /* Main.storyboard */; };
 		082501BE279BD86800AECB82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082501BD279BD86800AECB82 /* Assets.xcassets */; };
 		082501C1279BD86800AECB82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082501BF279BD86800AECB82 /* LaunchScreen.storyboard */; };
 		082501CC279BD86800AECB82 /* LRUCacheAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501CB279BD86800AECB82 /* LRUCacheAppTests.swift */; };
@@ -21,6 +19,10 @@
 		082501F8279BEA1500AECB82 /* LRUCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501F7279BEA1500AECB82 /* LRUCacheTests.swift */; };
 		082501F9279BEA1500AECB82 /* libLRUCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 082501E8279BD92900AECB82 /* libLRUCache.a */; };
 		08250200279BEA2B00AECB82 /* DoublyLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082501FF279BEA2B00AECB82 /* DoublyLinkedListTests.swift */; };
+		08250203279C9A8800AECB82 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08250202279C9A8800AECB82 /* APIManager.swift */; };
+		08250207279C9D8400AECB82 /* libLRUCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 082501E8279BD92900AECB82 /* libLRUCache.a */; };
+		0825020B279C9DAE00AECB82 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0825020A279C9DAE00AECB82 /* ImageDownloader.swift */; };
+		08357109279D59CB0085F990 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08357108279D59CB0085F990 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,20 @@
 			remoteGlobalIDString = 082501E7279BD92900AECB82;
 			remoteInfo = LRUCache;
 		};
+		08250204279C9D7000AECB82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082501A9279BD86600AECB82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082501E7279BD92900AECB82;
+			remoteInfo = LRUCache;
+		};
+		08250208279C9D8400AECB82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082501A9279BD86600AECB82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082501E7279BD92900AECB82;
+			remoteInfo = LRUCache;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,9 +78,7 @@
 /* Begin PBXFileReference section */
 		082501B1279BD86600AECB82 /* LRUCacheApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRUCacheApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		082501B4279BD86600AECB82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		082501B6279BD86600AECB82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		082501B8279BD86600AECB82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		082501BB279BD86700AECB82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		082501BD279BD86800AECB82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082501C0279BD86800AECB82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082501C2279BD86800AECB82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +93,9 @@
 		082501F5279BEA1500AECB82 /* LRUCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRUCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		082501F7279BEA1500AECB82 /* LRUCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheTests.swift; sourceTree = "<group>"; };
 		082501FF279BEA2B00AECB82 /* DoublyLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedListTests.swift; sourceTree = "<group>"; };
+		08250202279C9A8800AECB82 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0825020A279C9DAE00AECB82 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		08357108279D59CB0085F990 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08250207279C9D8400AECB82 /* libLRUCache.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +148,7 @@
 				082501E9279BD92900AECB82 /* LRUCache */,
 				082501F6279BEA1500AECB82 /* LRUCacheTests */,
 				082501B2279BD86600AECB82 /* Products */,
+				08250206279C9D8400AECB82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,9 +168,10 @@
 			isa = PBXGroup;
 			children = (
 				082501B4279BD86600AECB82 /* AppDelegate.swift */,
-				082501B6279BD86600AECB82 /* SceneDelegate.swift */,
 				082501B8279BD86600AECB82 /* ViewController.swift */,
-				082501BA279BD86700AECB82 /* Main.storyboard */,
+				08250202279C9A8800AECB82 /* APIManager.swift */,
+				08357108279D59CB0085F990 /* CacheManager.swift */,
+				0825020A279C9DAE00AECB82 /* ImageDownloader.swift */,
 				082501BD279BD86800AECB82 /* Assets.xcassets */,
 				082501BF279BD86800AECB82 /* LaunchScreen.storyboard */,
 				082501C2279BD86800AECB82 /* Info.plist */,
@@ -194,6 +214,13 @@
 			path = LRUCacheTests;
 			sourceTree = "<group>";
 		};
+		08250206279C9D8400AECB82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +235,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				08250205279C9D7000AECB82 /* PBXTargetDependency */,
+				08250209279C9D8400AECB82 /* PBXTargetDependency */,
 			);
 			name = LRUCacheApp;
 			productName = LRUCacheApp;
@@ -343,7 +372,6 @@
 			files = (
 				082501C1279BD86800AECB82 /* LaunchScreen.storyboard in Resources */,
 				082501BE279BD86800AECB82 /* Assets.xcassets in Resources */,
-				082501BC279BD86700AECB82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,9 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08250203279C9A8800AECB82 /* APIManager.swift in Sources */,
+				08357109279D59CB0085F990 /* CacheManager.swift in Sources */,
 				082501B9279BD86600AECB82 /* ViewController.swift in Sources */,
 				082501B5279BD86600AECB82 /* AppDelegate.swift in Sources */,
-				082501B7279BD86600AECB82 /* SceneDelegate.swift in Sources */,
+				0825020B279C9DAE00AECB82 /* ImageDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,17 +464,19 @@
 			target = 082501E7279BD92900AECB82 /* LRUCache */;
 			targetProxy = 082501FA279BEA1500AECB82 /* PBXContainerItemProxy */;
 		};
+		08250205279C9D7000AECB82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082501E7279BD92900AECB82 /* LRUCache */;
+			targetProxy = 08250204279C9D7000AECB82 /* PBXContainerItemProxy */;
+		};
+		08250209279C9D8400AECB82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082501E7279BD92900AECB82 /* LRUCache */;
+			targetProxy = 08250208279C9D8400AECB82 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		082501BA279BD86700AECB82 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				082501BB279BD86700AECB82 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		082501BF279BD86800AECB82 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -583,7 +615,6 @@
 				INFOPLIST_FILE = LRUCacheApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,7 +641,6 @@
 				INFOPLIST_FILE = LRUCacheApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
