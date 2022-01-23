@@ -1,4 +1,3 @@
-import LRUCache
 import UIKit
 
 protocol ImageDownloaderProtocol: AnyObject {

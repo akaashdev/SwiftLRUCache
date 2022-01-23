@@ -17,7 +17,7 @@ class ViewController: UICollectionViewController {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 12
         layout.minimumInteritemSpacing = 12
-        layout.itemSize = CGSize(width: 180, height: 180)
+        layout.itemSize = CGSize(width: 175, height: 175)
         super.init(collectionViewLayout: layout)
     }
     
@@ -60,13 +60,10 @@ class ViewController: UICollectionViewController {
                       let dict = json as? [String: Any],
                       let dataDict = dict["data"] as? [String: Any],
                       let memes = dataDict["memes"] as? [[String: Any]]
-                else {
-                    print("JSON parse error")
-                    return
-                }
+                else { return print("JSON parse error") }
                 
                 let urls = memes.compactMap { $0["url"] as? String }
-                self.items = urls + urls + urls // to simulate more items are redundancy
+                self.items = urls + urls + urls // to simulate more items and redundancy
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -85,9 +82,9 @@ class ViewController: UICollectionViewController {
     private func showCacheStats() {
         let stats = cacheManager.getStats()
         let content = """
-        Type           - \(cacheManager.isLRUCacheSelected ? "LRUCache" : "NSCache")
-        Total Hits     - \(stats.totalHits)
-        Cache Hits     - \(stats.cacheHits)
+        Type - \(cacheManager.isLRUCacheSelected ? "LRUCache" : "NSCache")
+        Total Hits - \(stats.totalHits)
+        Cache Hits - \(stats.cacheHits)
         Cache Hit Rate - \(stats.hitRate * 100)%
         """
         let alert = UIAlertController(title: "Cache Stats", message: content, preferredStyle: .alert)

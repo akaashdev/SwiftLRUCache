@@ -5,8 +5,14 @@ protocol CacheConfigable {
     var maxCount: Int { get }
 }
 
+/**
+ The struct used to configure the LRUCache
+ 
+ - Parameter maxCost : Tells the maximum memory allowed to the cache
+ - Parameter maxCount : Tells the maximum limit of items the cache and hold
+ **/
 public struct CacheConfig: CacheConfigable {
-    static let `default` = CacheConfig()
+    public static let `default` = CacheConfig()
     let maxCost: Int
     let maxCount: Int
     
@@ -38,11 +44,12 @@ public class LRUCache<Key: Hashable, Item> {
         didSet { purge() }
     }
     
-    public convenience init() {
-        self.init(config: CacheConfig.default)
-    }
-    
-    public convenience init(cacheConfig: CacheConfig) {
+    /**
+     Initializes a new LRUCache with the provided `CacheConfig`
+     
+     - Parameter cacheConfig : The configuration of the cache. Takes maximum limits by default.
+     **/
+    public convenience init(cacheConfig: CacheConfig = .default) {
         self.init(config: cacheConfig)
     }
     
@@ -53,6 +60,13 @@ public class LRUCache<Key: Hashable, Item> {
         costProvider = advanceConfig?.costProvider ?? CostProvider()
     }
     
+    /**
+     Returns the cached `Item` for the given `Key`
+     
+     - Parameter key : The `Key` the item is mapped with
+     - Returns : The cached `Item` for the given `Key` if available, else returns `nil`
+     - Complexity : O(1)
+     **/
     public func value(for key: Key) -> Item? {
         lock.lock()
         defer { lock.unlock() }
@@ -63,6 +77,13 @@ public class LRUCache<Key: Hashable, Item> {
         return itemNode.item
     }
     
+    /**
+     Returns the additonal informations of the cached `Item` for the given `Key`
+     
+     - Parameter key : The `Key` the item is mapped with
+     - Returns : `ItemMetaData` for the given `Key` if available, else returns `nil`
+     - Complexity : O(1)
+     **/
     public func itemInfo(for key: Key) -> ItemMetaData? {
         lock.lock()
         defer { lock.unlock() }
@@ -73,6 +94,13 @@ public class LRUCache<Key: Hashable, Item> {
                             lastAccessedTime: itemNode.lastAccessedTime)
     }
     
+    /**
+     Caches the provided `Item` with the provided `Key`
+     
+     - Parameter item : The `Item` that need to be cached
+     - Parameter key : The `Key` the item needs to be mapped with 
+     - Complexity : O(1)
+     **/
     public func setItem(_ item: Item, for key: Key) {
         lock.lock()
         defer { lock.unlock() }
@@ -82,6 +110,10 @@ public class LRUCache<Key: Hashable, Item> {
         totalCost += itemNode.cost
     }
     
+    /**
+     Clears the cache by removing all the items
+     - Complexity : O(1)
+     **/
     public func clearAll() {
         lock.lock()
         map.removeAll()
