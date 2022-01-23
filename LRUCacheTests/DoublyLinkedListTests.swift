@@ -123,6 +123,7 @@ class DoublyLinkedListTests: XCTestCase {
             XCTAssertNil(list.tail)
         }
         
+        // to make sure there is no leaks
         XCTAssertNil(node1)
         XCTAssertNil(node2)
         XCTAssertNil(node3)
